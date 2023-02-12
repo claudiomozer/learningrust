@@ -1,4 +1,10 @@
-fn main() {  
+const PI:f32 = 3.14;
+static VARIAVEL_GLOBAL:u8 = 8;
+
+fn main() {
+    println!("constante = {}", PI);
+    println!("variavel global = {}, tamanho={}", VARIAVEL_GLOBAL, std::mem::size_of_val(&VARIAVEL_GLOBAL));
+
     let variavel:u8 = 128;
     println!("variavel = {}, tamanho={}", variavel, std::mem::size_of_val(&variavel));
 
