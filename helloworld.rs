@@ -1,6 +1,10 @@
 const PI:f32 = 3.14;
 static VARIAVEL_GLOBAL:u8 = 8;
 
+fn soma(a:i32, b:i32) -> i32 {
+    a + b
+}
+
 fn escopo() {
     println!("constante = {}", PI);
     println!("variavel global = {}, tamanho={}", VARIAVEL_GLOBAL, std::mem::size_of_val(&VARIAVEL_GLOBAL));
@@ -34,4 +38,5 @@ fn escopo() {
 
 fn main() {
     escopo();
+    println!("Resultado da soma = {}", soma(21, -9))
 }
