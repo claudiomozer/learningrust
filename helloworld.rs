@@ -1,7 +1,7 @@
 const PI:f32 = 3.14;
 static VARIAVEL_GLOBAL:u8 = 8;
 
-fn main() {
+fn escopo() {
     println!("constante = {}", PI);
     println!("variavel global = {}, tamanho={}", VARIAVEL_GLOBAL, std::mem::size_of_val(&VARIAVEL_GLOBAL));
 
@@ -9,8 +9,14 @@ fn main() {
     println!("variavel = {}, tamanho={}", variavel, std::mem::size_of_val(&variavel));
 
     let decimal:f32 = 2.5;
+    println!("decimal antes do escopo = {}", decimal);
 
-    println!("decimal = {}", decimal);
+    {
+        let decimal:f32 = 44.4;
+        println!("decimal do escopo (shadowing) = {}", decimal);
+    }
+
+    println!("decimal depois do escopo = {}", decimal);
 
     let booleano = false;
     println!("Tamanho booleano = {}", std::mem::size_of_val(&booleano));
@@ -23,4 +29,9 @@ fn main() {
 
     let letra:char = 'C';
     println!("Char {}, Tamanho {}", letra, std::mem::size_of_val(&letra));
+}
+
+
+fn main() {
+    escopo();
 }
