@@ -35,7 +35,7 @@ fn escopo() {
     println!("Char {}, Tamanho {}", letra, std::mem::size_of_val(&letra));
 }
 
-fn condicao_if() {
+fn estruturas_condiciionais() {
     let idade: u8 = 15;
     let emancipado = true;
 
@@ -50,6 +50,19 @@ fn condicao_if() {
     let maior_de_idade : &str = if idade >= 18 { "maior" } else { "menor" };
 
     println!("Você é {} de idade", maior_de_idade);
+
+    let linguagem: &str = "Go";
+    let proposito: &str = match linguagem {
+        "PHP" => "Common webpages",
+        "Go" => "Light and performatic microsservices",
+        "Kotlin" | "Java" => "Android",
+        "C" | "C++" => "Embeded systems",
+        "Python" => "IA",
+        "Rust" => "Performatic applications",
+        _ => "Desconhecido"
+    };
+
+    println!("O propósito de {} é {}.", linguagem, proposito);
 }
 
 fn taboada() {
@@ -82,7 +95,7 @@ fn main() {
     // funções
     println!("Resultado da soma = {}", soma(21, -9));
     // if
-    condicao_if();
+    estruturas_condiciionais();
 
     // loops
     taboada();
