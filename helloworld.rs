@@ -35,11 +35,7 @@ fn escopo() {
     println!("Char {}, Tamanho {}", letra, std::mem::size_of_val(&letra));
 }
 
-
-fn main() {
-    escopo();
-    println!("Resultado da soma = {}", soma(21, -9));
-
+fn condicao_if() {
     let idade: u8 = 15;
     let emancipado = true;
 
@@ -53,6 +49,11 @@ fn main() {
 
     let maior_de_idade : &str = if idade >= 18 { "maior" } else { "menor" };
 
-    println!("Você é {} de idade", maior_de_idade)
+    println!("Você é {} de idade", maior_de_idade);
+}
 
+fn main() {
+    escopo();
+    println!("Resultado da soma = {}", soma(21, -9));
+    condicao_if();
 }
