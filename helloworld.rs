@@ -38,5 +38,21 @@ fn escopo() {
 
 fn main() {
     escopo();
-    println!("Resultado da soma = {}", soma(21, -9))
+    println!("Resultado da soma = {}", soma(21, -9));
+
+    let idade: u8 = 15;
+    let emancipado = true;
+
+    if idade >= 18 {
+        println!("Você possui {} anos, já é maior de idade", idade);
+    } else if emancipado {
+        println!("Você possui {} anos, é menor de idade, mas é emancipado", idade)
+    } else {
+        println!("Você possui {} anos, ainda é menor de idade", idade);
+    }
+
+    let maior_de_idade : &str = if idade >= 18 { "maior" } else { "menor" };
+
+    println!("Você é {} de idade", maior_de_idade)
+
 }
