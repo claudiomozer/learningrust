@@ -52,8 +52,34 @@ fn condicao_if() {
     println!("Você é {} de idade", maior_de_idade);
 }
 
+fn taboada() {
+    let multiplicador:u8= 6;
+    
+    let mut count:u8 = 0;
+    while count < 10 {
+        count += 1;
+        println!("{} x {} = {}", multiplicador, count, multiplicador*count);
+    }
+
+    count = 0;
+    loop {
+        count += 1;
+        
+        println!("{} x {} = {}", multiplicador, count, multiplicador*count);
+        if count == 10 {
+            break;
+        }
+    }
+}
+
 fn main() {
+    // tipos de dados e estruturas básicas
     escopo();
+    // funções
     println!("Resultado da soma = {}", soma(21, -9));
+    // if
     condicao_if();
+
+    // loops
+    taboada();
 }
