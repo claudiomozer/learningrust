@@ -70,6 +70,10 @@ fn taboada() {
             break;
         }
     }
+
+    for i in 1..11 {
+        println!("{} x {} = {}", multiplicador, i, multiplicador*i);
+    }
 }
 
 fn main() {
