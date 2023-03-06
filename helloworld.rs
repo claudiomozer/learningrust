@@ -89,6 +89,18 @@ fn taboada() {
     }
 }
 
+fn ownership() {
+    let mut uma_string = String::from("Craudio");
+    rouba(&mut uma_string);
+
+    println!("{}", uma_string); 
+}
+
+fn rouba (string: &mut String){
+    string.push_str(" Matador");
+    println!("{}", string);
+}
+
 fn main() {
     // tipos de dados e estruturas básicas
     escopo();
@@ -99,4 +111,7 @@ fn main() {
 
     // loops
     taboada();
+
+    // ownership
+    ownership();
 }
