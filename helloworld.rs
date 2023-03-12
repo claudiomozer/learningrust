@@ -35,7 +35,7 @@ fn escopo() {
     println!("Char {}, Tamanho {}", letra, std::mem::size_of_val(&letra));
 }
 
-fn estruturas_condiciionais() {
+fn estruturas_condicionais() {
     let idade: u8 = 15;
     let emancipado = true;
 
@@ -113,13 +113,25 @@ fn pattern_matching() {
     }
 }
 
+fn erros() {
+    match resultado() {
+        Ok(s) => println!("{}", s),
+        Err(numero) => println!("Erro {}", numero)
+    }
+}
+
+fn resultado() -> Result<String, i8> {
+    // Ok(String::from("Tudo deu certo"))
+    Err(-1)
+}
+
 fn main() {
     // tipos de dados e estruturas básicas
     escopo();
     // funções
     println!("Resultado da soma = {}", soma(21, -9));
     // if
-    estruturas_condiciionais();
+    estruturas_condicionais();
 
     // loops
     taboada();
@@ -129,4 +141,7 @@ fn main() {
 
     // pattern_matching
     pattern_matching();
+
+    // erros
+    erros();
 }
